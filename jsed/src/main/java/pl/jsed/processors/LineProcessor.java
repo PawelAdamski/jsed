@@ -12,4 +12,10 @@ public abstract class LineProcessor {
         this.line = line;
 
     }
+
+    public abstract String getName();
+
+    public abstract int getNumberOfArguments();
+
+    public abstract void setArguments(String... args);
 }
