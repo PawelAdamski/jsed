@@ -1,12 +1,14 @@
 package pl.jsed.processors;
 
+import java.util.Optional;
+
 public abstract class LineProcessor {
 
     protected String line;
 
     protected String fileName;
 
-    public abstract String process();
+    public abstract Optional<String> process();
 
     public void setLine(String line) {
         this.line = line;

@@ -1,13 +1,15 @@
 package pl.jsed.processors;
 
+import java.util.Optional;
+
 public class Replace extends LineProcessor {
 
     private String target;
     private String replacement;
 
     @Override
-    public String process() {
-        return line.replace(target, replacement);
+    public Optional<String> process() {
+        return Optional.of(line.replace(target, replacement));
     }
 
     @Override

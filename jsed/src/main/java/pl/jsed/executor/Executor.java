@@ -3,6 +3,7 @@ package pl.jsed.executor;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
+import java.util.Optional;
 import java.util.Scanner;
 
 import pl.jsed.processors.LineProcessor;
@@ -15,12 +16,14 @@ public class Executor {
         while (s.hasNextLine()) {
             String line = s.nextLine();
             processor.setLine(line);
-            String newLine = processor.process();
-            if (!firstLine) {
-                output.append('\n');
+            Optional<String> newLine = processor.process();
+            if (newLine.isPresent()) {
+                if (!firstLine) {
+                    output.append('\n');
+                }
+                output.append(newLine.get());
+                firstLine = false;
             }
-            output.append(newLine);
-            firstLine = false;
         }
         s.close();
     }
