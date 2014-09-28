@@ -27,7 +27,7 @@ public class ReplaceTest {
     @Test
     public void replace_a_to_b_in_one_line() throws IOException {
         String[] args = new String[] { "replace", "a", "b", oneLineFile.getAbsolutePath() };
-        App.main(args);
+        JSed.main(args);
         assertEquals("bbbbcc", getResult(oneLineFile));
     }
 

@@ -27,7 +27,7 @@ public class ReplaceAllTest {
     @Test
     public void replaceALL_in_one_line() throws IOException {
         String[] args = new String[] { "replace", "a.b", "d", oneLineFile.getAbsolutePath() };
-        App.main(args);
+        JSed.main(args);
         assertEquals("dbcc", getResult(oneLineFile));
     }
 

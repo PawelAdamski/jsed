@@ -20,4 +20,12 @@ public abstract class LineProcessor {
     public abstract int getNumberOfArguments();
 
     public abstract void setArguments(String... args);
+
+    public Optional<String> writeAfterFile() {
+        return Optional.empty();
+    }
+
+    public Optional<String> writeBeforeFile() {
+        return Optional.empty();
+    }
 }

@@ -27,35 +27,35 @@ public class UpperTest {
     @Test
     public void upper_a_in_one_line() throws IOException {
         String[] args = new String[] { "upper", "a", oneLineFile.getAbsolutePath() };
-        App.main(args);
+        JSed.main(args);
         assertEquals("AAbAbccAccA", getResult(oneLineFile));
     }
 
     @Test
     public void upper_aba_in_one_line() throws IOException {
         String[] args = new String[] { "upper", "a.a", oneLineFile.getAbsolutePath() };
-        App.main(args);
+        JSed.main(args);
         assertEquals("aABAbccacca", getResult(oneLineFile));
     }
 
     @Test
     public void upper_overlapping_matches_in_one_line() throws IOException {
         String[] args = new String[] { "upper", ".b.", oneLineFile.getAbsolutePath() };
-        App.main(args);
+        JSed.main(args);
         assertEquals("aABABCcacca", getResult(oneLineFile));
     }
 
     @Test
     public void upper_two_dots_in_one_line() throws IOException {
         String[] args = new String[] { "upper", "..", oneLineFile.getAbsolutePath() };
-        App.main(args);
+        JSed.main(args);
         assertEquals("AABABCCACCA", getResult(oneLineFile));
     }
 
     @Test
     public void no_matching() throws IOException {
         String[] args = new String[] { "upper", "xyz", oneLineFile.getAbsolutePath() };
-        App.main(args);
+        JSed.main(args);
         assertEquals("aababccacca", getResult(oneLineFile));
     }
 
